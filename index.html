@@ -289,8 +289,14 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       transition: border-color 0.25s, transform 0.25s;
+      position: relative;
     }
     .work-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
+    .card-overlay-link {
+      position: absolute; inset: 0; z-index: 1;
+      display: block;
+    }
+    .work-live-link { position: relative; z-index: 2; }
     .work-card.wide { grid-column: span 2; }
     @media (max-width: 700px) { .work-card.wide { grid-column: auto; } }
 
@@ -631,6 +637,7 @@
 
       <!-- 1: Dashboard / Reporting -->
       <div class="work-card reveal reveal-d1">
+        <a class="card-overlay-link" href="https://projects.bryantnankee.com/hubspot-dashboard.html" target="_blank" rel="noopener" aria-label="View Attribution & Performance Dashboards"></a>
         <div class="work-img">
           <div style="position:absolute;inset:0;overflow:hidden;">
             <iframe class="scale-iframe" src="https://projects.bryantnankee.com/hubspot-dashboard.html" style="width:1280px;height:720px;transform:scale(0.384);transform-origin:top left;border:none;pointer-events:none;" loading="lazy"></iframe>
@@ -669,6 +676,7 @@
 
       <!-- 3: HubSpot Workflow -->
       <div class="work-card reveal reveal-d3">
+        <a class="card-overlay-link" href="https://projects.bryantnankee.com/hubspot-workflow.html" target="_blank" rel="noopener" aria-label="View HubSpot Lead Routing & Automation"></a>
         <div class="work-img">
           <div style="position:absolute;inset:0;overflow:hidden;">
             <iframe class="scale-iframe" src="https://projects.bryantnankee.com/hubspot-workflow.html" style="width:1280px;height:720px;transform:scale(0.384);transform-origin:top left;border:none;pointer-events:none;" loading="lazy"></iframe>
@@ -688,16 +696,38 @@
 
       <!-- 4: Attribution System -->
       <div class="work-card reveal reveal-d1">
-        <div class="work-img">
-          <div class="work-img-placeholder">
-            <div class="placeholder-icon">🎯</div>
-            <div class="placeholder-label">UTM Attribution Architecture</div>
-            <div class="placeholder-note">Replace with a diagram or screenshot of your UTM/attribution system — could be a Notion diagram, Figma flow, or HubSpot view</div>
+        <div class="work-img" style="background:#0d111a;">
+          <div style="position:absolute;inset:0;overflow:hidden;padding:14px 10px;display:flex;align-items:flex-start;justify-content:center;">
+            <div style="transform:scale(0.72);transform-origin:top center;width:100%;min-width:560px;">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#7a90c4;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">UTM Taxonomy — All Channels</div>
+              <table style="width:100%;border-collapse:collapse;font-family:'Inter',monospace;font-size:10.5px;">
+                <thead>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,0.12);">
+                    <th style="text-align:left;padding:5px 8px;color:#fff;font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Source</th>
+                    <th style="text-align:left;padding:5px 8px;color:#fff;font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Medium</th>
+                    <th style="text-align:left;padding:5px 8px;color:#fff;font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Product</th>
+                    <th style="text-align:left;padding:5px 8px;color:#fff;font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Term</th>
+                    <th style="text-align:left;padding:5px 8px;color:#fff;font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Content</th>
+                    <th style="text-align:left;padding:5px 8px;color:#fff;font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Campaign</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                    <td style="padding:5px 8px;vertical-align:top;color:#8fa3cc;line-height:1.7;">google<br>bing<br>facebook<br>instagram<br>linkedin<br>capterra<br>software_advice<br>product<br>marketing_emails<br>sequence_emails<br>onsite_ads<br>organic<br>offline<br>event<br>association<br><span style="color:#c5a355;font-style:italic;">&#123;&#123;site_source_name&#125;&#125;</span></td>
+                    <td style="padding:5px 8px;vertical-align:top;color:#8fa3cc;line-height:1.7;">paidads<br>paidsocial<br>social<br>blog<br>newsletter<br>casestudy<br>sellsheet<br>postcard<br>pressrelease<br>banner<br>onsite_popup<br>top_banner<br>slidedeck<br>inactive_button<br>focus_ad<br>partnernetwork<br><span style="color:#c5a355;font-style:italic;">(careplan_ad)</span></td>
+                    <td style="padding:5px 8px;vertical-align:top;color:#8fa3cc;line-height:1.7;">fullsuite<br>clinical<br>emar<br>ehr<br>crm<br>move-ins<br>billing<br>brand</td>
+                    <td style="padding:5px 8px;vertical-align:top;color:#8fa3cc;line-height:1.7;"><span style="color:#c5a355;font-style:italic;">&#123;keyword&#125;</span><br><span style="color:#c5a355;font-style:italic;">&#123;&#123;adset.name&#125;&#125;</span></td>
+                    <td style="padding:5px 8px;vertical-align:top;color:#8fa3cc;line-height:1.7;"><span style="color:#c5a355;font-style:italic;">&#123;&#123;placement&#125;&#125;</span><br>linkinbio<br>search<br>display<br>print<br>sitelinks</td>
+                    <td style="padding:5px 8px;vertical-align:top;color:#8fa3cc;line-height:1.7;"><span style="color:#c5a355;font-style:italic;">&#123;&#123;ad.name&#125;&#125;</span><br>idd<br>event_wala2026<br>event_eventname<br>tradeshow_eventname<br>campaign_name<br>associationname</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
         <div class="work-meta">
           <div class="work-title">Full-Funnel UTM Attribution</div>
-          <div class="work-desc">Built the UTM convention system, form listener, and hidden field infrastructure that tracks every lead to its exact source — channel, campaign, audience, and ad creative. Closed won is now reportable by origin.</div>
+          <div class="work-desc">Before: lead source was a black box — HubSpot had channel, nothing below it. Built the UTM naming convention, hidden form fields, and a JavaScript listener that captures channel, campaign, audience, and ad creative at submission. Every closed deal now traces back to its exact origin. Enabled first-ever channel-level ROI reporting on $1M+ in annual ad spend.</div>
           <div class="work-tags">
             <span class="work-tag">UTM</span>
             <span class="work-tag">Form Listener</span>
@@ -717,7 +747,7 @@
         </div>
         <div class="work-meta">
           <div class="work-title">Autonomous AI Agent System</div>
-          <div class="work-desc">Specialized agents — each with defined roles and skills for SEO, content strategy, and distribution — that work autonomously together. They scrape industry trends, generate content, route to Notion for review, and queue for HubSpot distribution. Integrated with the Meta Ads API for AI-assisted ad optimization. Managed via GitHub repos with full documentation.</div>
+          <div class="work-desc">Built a system of specialized autonomous agents — each with a defined role (SEO analyst, content strategist, distribution manager) — that run on a heartbeat loop without manual intervention. Agents scrape industry trends, draft content briefs, route drafts to Notion for human review, and queue approved pieces for HubSpot distribution. Integrated with the Meta Ads API for AI-assisted performance feedback. Full system documented in GitHub with versioned agent configs.</div>
           <div class="work-tags">
             <span class="work-tag">Claude Code</span>
             <span class="work-tag">Codex</span>
@@ -751,11 +781,10 @@
 
       <!-- 7: Website Rebuild -->
       <div class="work-card reveal reveal-d1">
+        <a class="card-overlay-link" href="https://ecp-homepage-mockup.vercel.app/prototype.html" target="_blank" rel="noopener" aria-label="View 500-Page Website Rebuild Prototype"></a>
         <div class="work-img">
-          <div class="work-img-placeholder">
-            <div class="placeholder-icon">🌐</div>
-            <div class="placeholder-label">Website Rebuild</div>
-            <div class="placeholder-note">Replace with before/after screenshots or a live section preview of the ECP website rebuild (500 pages)</div>
+          <div style="position:absolute;inset:0;overflow:hidden;">
+            <iframe class="scale-iframe" src="https://ecp-homepage-mockup.vercel.app/prototype.html" style="width:1280px;height:720px;transform:scale(0.384);transform-origin:top left;border:none;pointer-events:none;" loading="lazy"></iframe>
           </div>
         </div>
         <div class="work-meta">
@@ -767,6 +796,7 @@
             <span class="work-tag">GEO</span>
             <span class="work-tag">500 Pages</span>
           </div>
+          <a href="https://ecp-homepage-mockup.vercel.app/prototype.html" target="_blank" rel="noopener" class="work-live-link">View prototype →</a>
         </div>
       </div>
 
