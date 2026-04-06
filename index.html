@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bryant Nankee — Growth Marketing Leader | AI & Systems</title>
+  <meta name="description" content="Bryant Nankee — Growth marketing leader specializing in demand generation, paid media, HubSpot operations, and AI-powered marketing systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #04091f;
+      --bg-card:     #0a1235;
+      --bg-card-alt: #0d1640;
+      --navy:        #0b124b;
+      --border:      #1a2660;
+      --border-glow: #2a3d8a;
+      --accent:      #4a8cff;
+      --accent-2:    #6fa3ff;
+      --accent-glow: rgba(74, 140, 255, 0.15);
+      --teal:        #38d9c0;
+      --teal-glow:   rgba(56, 217, 192, 0.12);
+      --white:       #ffffff;
+      --text-muted:  #7a90c4;
+      --text-sub:    #a8b8d8;
+      --radius:      12px;
+      --radius-lg:   20px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-glow); border-radius: 3px; }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+    .reveal-d4 { transition-delay: 0.32s; }
+    .reveal-d5 { transition-delay: 0.40s; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 40px;
+      height: 62px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(4,9,31,0.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(26,38,96,0.5);
+    }
+    .nav-left { display: flex; align-items: center; gap: 12px; }
+    .nav-name { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; color: var(--white); }
+    .nav-sep { width: 1px; height: 18px; background: var(--border); }
+    .nav-role { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-link {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); text-decoration: none;
+      padding: 6px 12px; border-radius: 100px;
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.06); }
+    .nav-cta {
+      font-size: 12px; font-weight: 600;
+      color: var(--bg); background: var(--accent);
+      padding: 7px 16px; border-radius: 100px; text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--accent-2); transform: translateY(-1px); }
+    @media (max-width: 900px) { .nav-links { display: none; } .nav-role { display: none; } }
+    @media (max-width: 600px) { nav { padding: 0 20px; } }
+
+    /* ─── SECTIONS ─── */
+    section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 100px 40px;
+    }
+    @media (max-width: 700px) { section { padding: 72px 20px; } }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent-2);
+      background: var(--accent-glow);
+      border: 1px solid rgba(74,140,255,0.2);
+      padding: 4px 12px; border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 17px; color: var(--text-sub); line-height: 1.65;
+      max-width: 600px; margin-bottom: 56px;
+    }
+    .divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding-top: 120px; padding-bottom: 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(74,140,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,140,255,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+    }
+    .hero-glow {
+      position: absolute; top: 20%; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(74,140,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--accent-2);
+      background: var(--accent-glow);
+      border: 1px solid rgba(74,140,255,0.22);
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; background: var(--accent); border-radius: 50%;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.75); } }
+    .hero-name {
+      font-size: clamp(52px, 9vw, 96px);
+      font-weight: 800; line-height: 1.0; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 0%, #b8cfff 55%, #6fa3ff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: 400; color: var(--text-sub); letter-spacing: 0.02em;
+      margin-bottom: 44px;
+    }
+    .hero-title strong { color: var(--white); font-weight: 600; }
+    .hero-stats {
+      display: flex; gap: 0; margin-bottom: 48px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .hero-stat {
+      padding: 24px 36px; text-align: center; flex: 1;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-val {
+      font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--white) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-stat-val.teal {
+      background: linear-gradient(135deg, var(--teal) 0%, #a0f0e4 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-stat-label { font-size: 12px; color: var(--text-muted); font-weight: 500; margin-top: 4px; }
+    @media (max-width: 600px) {
+      .hero-stats { flex-direction: column; }
+      .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-stat:last-child { border-bottom: none; }
+      .hero-stat { padding: 18px 24px; }
+    }
+    .hero-ctas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      font-size: 14px; font-weight: 600;
+      color: var(--bg); background: var(--accent);
+      padding: 13px 28px; border-radius: 100px; text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74,140,255,0.3); }
+    .btn-secondary {
+      font-size: 14px; font-weight: 600;
+      color: var(--text-sub); background: transparent;
+      border: 1px solid var(--border);
+      padding: 12px 28px; border-radius: 100px; text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover { color: var(--white); border-color: var(--border-glow); background: rgba(255,255,255,0.04); }
+
+    /* ─── RESULTS ─── */
+    .results-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px;
+      margin-bottom: 0;
+    }
+    @media (max-width: 800px) { .results-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 801px) and (max-width: 1000px) { .results-grid { grid-template-columns: 1fr 1fr; } }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .result-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
+    .result-card.feature {
+      grid-row: span 2;
+      background: linear-gradient(145deg, var(--bg-card) 0%, #0d1840 100%);
+      border-color: rgba(74,140,255,0.3);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    @media (max-width: 800px) { .result-card.feature { grid-row: auto; } }
+
+    .result-num {
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1;
+      background: linear-gradient(135deg, var(--white) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 8px;
+    }
+    .result-num.teal {
+      background: linear-gradient(135deg, var(--teal) 0%, #9ef5e8 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .result-label { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+    .result-sub { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    .traj-bars { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
+    .traj-row { display: flex; align-items: center; gap: 12px; }
+    .traj-row-label { font-size: 11px; color: var(--text-muted); font-weight: 600; width: 60px; flex-shrink: 0; }
+    .traj-track { flex: 1; height: 28px; background: rgba(255,255,255,0.05); border-radius: 6px; overflow: hidden; }
+    .traj-fill {
+      height: 100%; border-radius: 6px;
+      display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;
+      font-size: 12px; font-weight: 700; color: var(--bg);
+      transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .traj-fill.base { background: rgba(74,140,255,0.5); width: 0%; }
+    .traj-fill.yr1  { background: rgba(74,140,255,0.75); width: 0%; }
+    .traj-fill.yr2  { background: var(--teal); width: 0%; }
+
+    .cw-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+    .cw-badge {
+      font-size: 11px; font-weight: 600;
+      color: var(--accent-2); background: var(--accent-glow);
+      border: 1px solid rgba(74,140,255,0.2);
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .cw-badge.teal-badge {
+      color: var(--teal); background: var(--teal-glow);
+      border-color: rgba(56,217,192,0.2);
+    }
+
+    /* ─── WORK SAMPLES ─── */
+    .work-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    }
+    @media (max-width: 700px) { .work-grid { grid-template-columns: 1fr; } }
+
+    .work-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .work-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
+    .work-card.wide { grid-column: span 2; }
+    @media (max-width: 700px) { .work-card.wide { grid-column: auto; } }
+
+    .work-img {
+      width: 100%; aspect-ratio: 16/9;
+      background: var(--bg-card-alt);
+      border-bottom: 1px solid var(--border);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; position: relative; overflow: hidden;
+    }
+    .work-img-placeholder {
+      /* ── REPLACE THIS ELEMENT WITH AN <img> TAG WHEN YOU HAVE THE SCREENSHOT ── */
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 8px;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.015) 0px,
+        rgba(255,255,255,0.015) 1px,
+        transparent 1px,
+        transparent 12px
+      );
+    }
+    .placeholder-icon { font-size: 32px; opacity: 0.4; }
+    .placeholder-label {
+      font-size: 12px; font-weight: 600; color: var(--text-muted);
+      letter-spacing: 0.05em; text-transform: uppercase; text-align: center;
+      padding: 0 24px;
+    }
+    .placeholder-note {
+      font-size: 11px; color: rgba(122,144,196,0.6);
+      font-style: italic; text-align: center; padding: 0 24px;
+    }
+    .work-meta { padding: 20px 24px; }
+    .work-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .work-desc { font-size: 13px; color: var(--text-sub); line-height: 1.55; }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .work-tag {
+      font-size: 11px; font-weight: 600;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 3px 9px; border-radius: 100px;
+    }
+
+    /* ─── AI & SYSTEMS ─── */
+    #ai-systems {
+      background: linear-gradient(180deg, var(--bg) 0%, #060e30 50%, var(--bg) 100%);
+      position: relative; overflow: hidden;
+    }
+    #ai-systems::before {
+      content: ''; position: absolute; top: -30%; left: -10%; width: 50%; height: 160%;
+      background: radial-gradient(ellipse, rgba(56,217,192,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    #ai-systems::after {
+      content: ''; position: absolute; top: -30%; right: -10%; width: 50%; height: 160%;
+      background: radial-gradient(ellipse, rgba(74,140,255,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    #ai-systems > * { position: relative; z-index: 1; }
+
+    .ai-intro {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+      margin-bottom: 56px;
+    }
+    @media (max-width: 700px) { .ai-intro { grid-template-columns: 1fr; gap: 24px; } }
+
+    .ai-stack {
+      background: var(--bg-card);
+      border: 1px solid rgba(74,140,255,0.25);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    .ai-stack-title {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent-2); margin-bottom: 18px;
+    }
+    .stack-items { display: flex; flex-direction: column; gap: 10px; }
+    .stack-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+    }
+    .stack-item-icon { font-size: 18px; flex-shrink: 0; width: 24px; text-align: center; }
+    .stack-item-name { font-size: 13px; font-weight: 600; color: var(--white); }
+    .stack-item-desc { font-size: 12px; color: var(--text-muted); }
+
+    .ai-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (max-width: 700px) { .ai-cards { grid-template-columns: 1fr; } }
+
+    .ai-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .ai-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
+    .ai-card-icon { font-size: 28px; margin-bottom: 14px; }
+    .ai-card-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .ai-card-desc { font-size: 14px; color: var(--text-sub); line-height: 1.6; }
+    .ai-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .ai-card-tag {
+      font-size: 11px; font-weight: 600;
+      color: var(--teal); background: var(--teal-glow);
+      border: 1px solid rgba(56,217,192,0.18);
+      padding: 3px 9px; border-radius: 100px;
+    }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+    .about-photo {
+      /* ── REPLACE WITH <img> TAG WHEN HEADSHOT IS READY ── */
+      aspect-ratio: 4/5; max-width: 360px; width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    }
+    .about-copy p {
+      font-size: 16px; color: var(--text-sub); line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .about-copy p:last-of-type { margin-bottom: 24px; }
+    .about-copy strong { color: var(--white); }
+    .about-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .about-link {
+      font-size: 13px; font-weight: 600; color: var(--accent-2);
+      border: 1px solid rgba(74,140,255,0.25);
+      padding: 8px 18px; border-radius: 100px; text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .about-link:hover { background: var(--accent-glow); border-color: var(--accent); }
+
+    /* ─── CONTACT ─── */
+    #contact { text-align: center; padding-bottom: 120px; }
+    .contact-card {
+      max-width: 560px; margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid rgba(74,140,255,0.25);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+    }
+    .contact-title { font-size: 28px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .contact-sub { font-size: 16px; color: var(--text-sub); line-height: 1.6; margin-bottom: 32px; }
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none; color: var(--white);
+      font-size: 14px; font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .contact-link:hover { border-color: var(--border-glow); background: rgba(74,140,255,0.06); }
+    .contact-link-icon { font-size: 18px; }
+    .contact-link-label { flex: 1; }
+    .contact-link-val { font-size: 13px; color: var(--text-muted); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      text-align: center; padding: 28px 40px;
+      border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-left">
+      <span class="nav-name">Bryant Nankee</span>
+      <div class="nav-sep"></div>
+      <span class="nav-role">Growth Marketing · AI Systems</span>
+    </div>
+    <div class="nav-links">
+      <a href="#results" class="nav-link">Results</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#ai-systems" class="nav-link">AI & Systems</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="resume.html" class="nav-cta">View Resume</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-badge reveal">
+      <span class="hero-badge-dot"></span>
+      Available for new opportunities
+    </div>
+
+    <h1 class="hero-name reveal reveal-d1">Bryant Nankee</h1>
+
+    <p class="hero-title reveal reveal-d2">
+      <strong>Growth Marketing Leader</strong> &mdash; Demand Generation, Paid Media &amp; <strong>AI-Powered Systems</strong>
+    </p>
+
+    <div class="hero-stats reveal reveal-d3">
+      <div class="hero-stat">
+        <div class="hero-stat-val">+146%</div>
+        <div class="hero-stat-label">Inbound Lead Growth</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val teal">$9M+</div>
+        <div class="hero-stat-label">Inbound Closed Won (2025)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">$1.5M</div>
+        <div class="hero-stat-label">Paid Media Managed</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas reveal reveal-d4">
+      <a href="#results" class="btn-primary">See the Results</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- RESULTS -->
+  <section id="results">
+    <div class="section-tag reveal">Measurable Impact</div>
+    <h2 class="section-title reveal reveal-d1">Results that move<br>the pipeline.</h2>
+    <p class="section-sub reveal reveal-d2">Two years of compounding growth across demand generation, paid media, and marketing systems at a vertical SaaS company.</p>
+
+    <div class="results-grid">
+
+      <!-- Feature: Lead Trajectory -->
+      <div class="result-card feature reveal reveal-d1">
+        <div>
+          <div class="result-num" id="lead-count">81</div>
+          <div class="result-label">Inbound Leads / Month</div>
+          <div class="result-sub">Sustained trajectory over 21 months — from baseline to current average.</div>
+          <div class="traj-bars" id="traj-bars">
+            <div class="traj-row">
+              <div class="traj-row-label">Pre</div>
+              <div class="traj-track"><div class="traj-fill base" id="tbar-base">81</div></div>
+            </div>
+            <div class="traj-row">
+              <div class="traj-row-label">Year 1</div>
+              <div class="traj-track"><div class="traj-fill yr1" id="tbar-yr1">151</div></div>
+            </div>
+            <div class="traj-row">
+              <div class="traj-row-label">Year 2</div>
+              <div class="traj-track"><div class="traj-fill yr2" id="tbar-yr2">199</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 24px;">
+          <div style="display:inline-flex; align-items:center; gap:8px; background: var(--teal-glow); border: 1px solid rgba(56,217,192,0.2); padding:8px 14px; border-radius:100px;">
+            <span style="font-size:14px; font-weight:800; color:var(--teal);">+146%</span>
+            <span style="font-size:12px; color:var(--text-sub);">from baseline</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Closed Won -->
+      <div class="result-card reveal reveal-d2">
+        <div class="result-num teal">$9M+</div>
+        <div class="result-label">Inbound Closed Won (2025)</div>
+        <div class="result-sub">79% of all closed deals sourced through inbound — up from ~59% in 2024.</div>
+        <div class="cw-badges">
+          <span class="cw-badge teal-badge">4x+ YoY Growth</span>
+          <span class="cw-badge teal-badge">79% of Closed Won</span>
+        </div>
+      </div>
+
+      <!-- Paid Media -->
+      <div class="result-card reveal reveal-d3">
+        <div class="result-num">$1.5M</div>
+        <div class="result-label">Annual Paid Media</div>
+        <div class="result-sub">Google, Meta, LinkedIn &amp; Bing — allocated by ROI and pipeline contribution.</div>
+        <div class="cw-badges">
+          <span class="cw-badge">Google Search</span>
+          <span class="cw-badge">Meta</span>
+          <span class="cw-badge">Bing</span>
+        </div>
+      </div>
+
+      <!-- Attribution -->
+      <div class="result-card reveal reveal-d2" style="grid-column: span 1;">
+        <div class="result-num" style="font-size: clamp(28px,4vw,42px);">Full-Funnel</div>
+        <div class="result-label">Attribution Infrastructure</div>
+        <div class="result-sub">Built UTM architecture, form listener, and dynamic ad tracking — enabling exact lead source performance down to ad creative and audience.</div>
+        <div class="cw-badges">
+          <span class="cw-badge">UTM System</span>
+          <span class="cw-badge">Form Listener</span>
+          <span class="cw-badge">Dynamic Ads</span>
+        </div>
+      </div>
+
+      <!-- HubSpot -->
+      <div class="result-card reveal reveal-d3">
+        <div class="result-num" style="font-size:clamp(28px,4vw,42px);">HubSpot</div>
+        <div class="result-label">Full Admin Ownership</div>
+        <div class="result-sub">Lead routing, lifecycle automations, sales sequences, and reporting dashboards — built from near-zero to a core sales motion.</div>
+        <div class="cw-badges">
+          <span class="cw-badge">Lead Routing</span>
+          <span class="cw-badge">Sequences</span>
+          <span class="cw-badge">Attribution</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WORK SAMPLES -->
+  <section id="work">
+    <div class="section-tag reveal">Work Samples</div>
+    <h2 class="section-title reveal reveal-d1">The work, not<br>just the words.</h2>
+    <p class="section-sub reveal reveal-d2">A cross-section of campaigns, systems, and infrastructure built across paid media, attribution, HubSpot, and AI automation.</p>
+
+    <div class="work-grid">
+
+      <!-- 1: Dashboard / Reporting -->
+      <div class="work-card reveal reveal-d1">
+        <div class="work-img">
+          <div class="work-img-placeholder">
+            <div class="placeholder-icon">📊</div>
+            <div class="placeholder-label">HubSpot Reporting Dashboard</div>
+            <div class="placeholder-note">Replace with screenshot of your HubSpot or Looker Studio dashboard</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Attribution & Performance Dashboards</div>
+          <div class="work-desc">Custom HubSpot dashboards tracking closed won by source, CPL by channel, and demo pipeline — built to give sales and leadership a single source of truth.</div>
+          <div class="work-tags">
+            <span class="work-tag">HubSpot</span>
+            <span class="work-tag">Attribution</span>
+            <span class="work-tag">Reporting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: Ad Creative -->
+      <div class="work-card reveal reveal-d2">
+        <div class="work-img">
+          <div class="work-img-placeholder">
+            <div class="placeholder-icon">📡</div>
+            <div class="placeholder-label">Paid Media Creative</div>
+            <div class="placeholder-note">Replace with Meta or Google ad creative screenshot or collage</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Paid Media Campaigns</div>
+          <div class="work-desc">Ad creative and campaign structure across Meta, Google, LinkedIn, and Bing — including the Meta funnel I built from the ground up. Dynamic UTMs tied to audience, product, and creative.</div>
+          <div class="work-tags">
+            <span class="work-tag">Meta Ads</span>
+            <span class="work-tag">Google Ads</span>
+            <span class="work-tag">Bing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: HubSpot Workflow -->
+      <div class="work-card reveal reveal-d3">
+        <div class="work-img">
+          <div class="work-img-placeholder">
+            <div class="placeholder-icon">⚙️</div>
+            <div class="placeholder-label">HubSpot Workflow Diagram</div>
+            <div class="placeholder-note">Replace with screenshot of a lead routing or lifecycle workflow in HubSpot</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-title">HubSpot Lead Routing & Automation</div>
+          <div class="work-desc">Intelligent lead routing workflow that replaced a blind round-robin — assigning leads to the correct AE based on state and census data. Built alongside lifecycle management, nurture, and sales sequences.</div>
+          <div class="work-tags">
+            <span class="work-tag">HubSpot</span>
+            <span class="work-tag">Lead Routing</span>
+            <span class="work-tag">Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: Attribution System -->
+      <div class="work-card reveal reveal-d1">
+        <div class="work-img">
+          <div class="work-img-placeholder">
+            <div class="placeholder-icon">🎯</div>
+            <div class="placeholder-label">UTM Attribution Architecture</div>
+            <div class="placeholder-note">Replace with a diagram or screenshot of your UTM/attribution system — could be a Notion diagram, Figma flow, or HubSpot view</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Full-Funnel UTM Attribution</div>
+          <div class="work-desc">Built the UTM convention system, form listener, and hidden field infrastructure that tracks every lead to its exact source — channel, campaign, audience, and ad creative. Closed won is now reportable by origin.</div>
+          <div class="work-tags">
+            <span class="work-tag">UTM</span>
+            <span class="work-tag">Form Listener</span>
+            <span class="work-tag">Closed Won</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5: AI Agent System Wide Card -->
+      <div class="work-card wide reveal reveal-d2">
+        <div class="work-img" style="aspect-ratio: 3/1;">
+          <div class="work-img-placeholder">
+            <div class="placeholder-icon">🤖</div>
+            <div class="placeholder-label">AI Agent System / Claude Code Workflow</div>
+            <div class="placeholder-note">Replace with a screenshot of your agent architecture, Claude Code terminal, or a GitHub repo view showing the agent structure</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Autonomous AI Agent System</div>
+          <div class="work-desc">Specialized agents — each with defined roles and skills for SEO, content strategy, and distribution — that work autonomously together. They scrape industry trends, generate content, route to Notion for review, and queue for HubSpot distribution. Integrated with the Meta Ads API for AI-assisted ad optimization. Managed via GitHub repos with full documentation.</div>
+          <div class="work-tags">
+            <span class="work-tag">Claude Code</span>
+            <span class="work-tag">Codex</span>
+            <span class="work-tag">AI Agents</span>
+            <span class="work-tag">HubSpot API</span>
+            <span class="work-tag">Meta Ads API</span>
+            <span class="work-tag">Remotion</span>
+            <span class="work-tag">GitHub</span>
+            <span class="work-tag">Vercel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6: Video -->
+      <div class="work-card reveal reveal-d3">
+        <div class="work-img">
+          <div class="work-img-placeholder">
+            <div class="placeholder-icon">🎬</div>
+            <div class="placeholder-label">Remotion Video Sample</div>
+            <div class="placeholder-note">Replace with a still frame, GIF, or embed from a Remotion video you've produced</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-title">React-Based Video Production</div>
+          <div class="work-desc">Built programmatic video content using Remotion — React-based video engine. Production-quality output at scale without a video team.</div>
+          <div class="work-tags">
+            <span class="work-tag">Remotion</span>
+            <span class="work-tag">React</span>
+            <span class="work-tag">Content</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7: Website Rebuild -->
+      <div class="work-card reveal reveal-d1">
+        <div class="work-img">
+          <div class="work-img-placeholder">
+            <div class="placeholder-icon">🌐</div>
+            <div class="placeholder-label">Website Rebuild</div>
+            <div class="placeholder-note">Replace with before/after screenshots or a live section preview of the ECP website rebuild (500 pages)</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-title">500-Page Website Rebuild</div>
+          <div class="work-desc">Leading full website rebuild end-to-end — strategy, information architecture, copy, and execution across 500+ pages. Integrated with GEO/SEO-first structure for AI search citation.</div>
+          <div class="work-tags">
+            <span class="work-tag">Web Strategy</span>
+            <span class="work-tag">SEO</span>
+            <span class="work-tag">GEO</span>
+            <span class="work-tag">500 Pages</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- AI & SYSTEMS -->
+  <section id="ai-systems">
+    <div class="section-tag reveal">AI &amp; Systems</div>
+    <h2 class="section-title reveal reveal-d1">Building the infrastructure<br>most teams are still debating.</h2>
+    <p class="section-sub reveal reveal-d2">While most marketers are prompt-testing, I'm architecting autonomous systems — agents that execute, pipelines that compound, and infrastructure that scales output without scaling headcount.</p>
+
+    <div class="ai-intro">
+      <div class="reveal reveal-d2">
+        <p style="font-size:16px; color:var(--text-sub); line-height:1.75; margin-bottom:16px;">
+          I work mostly in <strong style="color:var(--white);">Claude Code</strong> and <strong style="color:var(--white);">Codex</strong> — building real systems, not just using chat interfaces. That means MCP integrations, GitHub repos with full documentation, API connections to Meta, HubSpot, and Vercel, and multi-agent workflows that run on their own.
+        </p>
+        <p style="font-size:16px; color:var(--text-sub); line-height:1.75; margin-bottom:24px;">
+          At ECP, I serve as the <strong style="color:var(--white);">company's AI systems architect</strong> — building the context libraries, process documentation, team skills, and automation plugins that expand the whole team's output. The goal: a lean team that operates at the throughput of a much larger one.
+        </p>
+        <div style="background:var(--teal-glow); border:1px solid rgba(56,217,192,0.2); border-radius:var(--radius); padding:16px 20px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--teal); margin-bottom:8px;">Multi-Agent AI System</div>
+          <p style="font-size:14px; color:var(--text-sub); line-height:1.6;">Specialized agents — each with defined roles and skills for SEO, website audits, content strategy, and distribution — that work autonomously together. Each agent polls for tasks, executes, and routes output for human review before anything publishes.</p>
+        </div>
+      </div>
+
+      <div class="ai-stack reveal reveal-d3">
+        <div class="ai-stack-title">Tech Stack</div>
+        <div class="stack-items">
+          <div class="stack-item">
+            <div class="stack-item-icon">🤖</div>
+            <div>
+              <div class="stack-item-name">Claude Code + Codex</div>
+              <div class="stack-item-desc">Primary development environment</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">🔗</div>
+            <div>
+              <div class="stack-item-name">MCP Integrations</div>
+              <div class="stack-item-desc">HubSpot, Notion, Gmail, Google Calendar</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">📡</div>
+            <div>
+              <div class="stack-item-name">Meta Ads API</div>
+              <div class="stack-item-desc">AI-assisted ad optimization</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">🎬</div>
+            <div>
+              <div class="stack-item-name">Remotion</div>
+              <div class="stack-item-desc">React-based video production</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">▲</div>
+            <div>
+              <div class="stack-item-name">Vercel + Cloudflare</div>
+              <div class="stack-item-desc">Deployment and edge infrastructure</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">🐙</div>
+            <div>
+              <div class="stack-item-name">GitHub</div>
+              <div class="stack-item-desc">Repos with full documentation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-cards">
+      <div class="ai-card reveal reveal-d1">
+        <div class="ai-card-icon">🔄</div>
+        <div class="ai-card-title">Autonomous Content Pipeline</div>
+        <div class="ai-card-desc">Agents scrape industry trends, generate content drafts, post to Notion for human review, and queue approved content for HubSpot distribution. The pipeline runs without manual intervention — humans review, not execute.</div>
+        <div class="ai-card-tags">
+          <span class="ai-card-tag">AI Agents</span>
+          <span class="ai-card-tag">Claude Code</span>
+          <span class="ai-card-tag">Notion</span>
+          <span class="ai-card-tag">HubSpot</span>
+        </div>
+      </div>
+
+      <div class="ai-card reveal reveal-d2">
+        <div class="ai-card-icon">📡</div>
+        <div class="ai-card-title">AI-Assisted Ad Management</div>
+        <div class="ai-card-desc">Integrated Claude with the Meta Ads API for AI-assisted campaign optimization — surfacing performance insights, flagging underperforming creative, and drafting copy variations. Moves faster than any manual process.</div>
+        <div class="ai-card-tags">
+          <span class="ai-card-tag">Meta API</span>
+          <span class="ai-card-tag">Codex</span>
+          <span class="ai-card-tag">Claude Code</span>
+        </div>
+      </div>
+
+      <div class="ai-card reveal reveal-d3">
+        <div class="ai-card-icon">🏗️</div>
+        <div class="ai-card-title">Company AI Architecture</div>
+        <div class="ai-card-desc">Serving as ECP's Claude Code architect — building context libraries, process documentation, reusable team skills, and automation plugins. Creating the infrastructure that lets the full team work with AI as a multiplier.</div>
+        <div class="ai-card-tags">
+          <span class="ai-card-tag">Claude Code</span>
+          <span class="ai-card-tag">GitHub</span>
+          <span class="ai-card-tag">Documentation</span>
+        </div>
+      </div>
+
+      <div class="ai-card reveal reveal-d1">
+        <div class="ai-card-icon">🎬</div>
+        <div class="ai-card-title">Programmatic Video Production</div>
+        <div class="ai-card-desc">Built video content systems using Remotion (React-based video engine), deployed via Vercel and Cloudflare. Production-quality, data-driven video at a pace no traditional team can match without a production budget.</div>
+        <div class="ai-card-tags">
+          <span class="ai-card-tag">Remotion</span>
+          <span class="ai-card-tag">React</span>
+          <span class="ai-card-tag">Vercel</span>
+          <span class="ai-card-tag">Cloudflare</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-tag reveal">About</div>
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="placeholder-icon" style="font-size:48px; opacity:0.2;">👤</div>
+        <div class="placeholder-note" style="margin-top:8px;">Replace this div with an &lt;img&gt; tag pointing to your headshot</div>
+      </div>
+      <div class="about-copy reveal reveal-d2">
+        <h2 class="section-title" style="font-size:clamp(28px,4vw,40px); margin-bottom:20px;">Builder at heart.<br>Marketer by trade.</h2>
+        <p>13 years in marketing — agencies, in-house, one company I co-founded. The common thread: I build systems that keep paying off after the initial work is done.</p>
+        <p>I've spent the past two years at <strong>ECP</strong> — a vertical SaaS platform for senior living — working within a lean marketing team where I own demand generation and marketing operations end-to-end. I manage $1M+ in paid media, run HubSpot across marketing and sales, and build AI systems that stretch what a small team can actually ship.</p>
+        <p>Outside of work: married to Anne, based in downtown Milwaukee, expecting our first baby in July 2026. I invest in real estate, travel whenever possible (30+ countries), and spend too much time thinking about golf.</p>
+        <div class="about-links">
+          <a href="https://www.linkedin.com/in/bryant-nankee/" target="_blank" rel="noopener" class="about-link">LinkedIn</a>
+          <a href="resume.html" class="about-link">View Resume</a>
+          <a href="mailto:bwnankee@gmail.com" class="about-link">Email Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-card reveal">
+      <div class="contact-title">Let's talk.</div>
+      <div class="contact-sub">Open to senior growth marketing, demand generation, and marketing operations roles. I move fast and bring the systems with me.</div>
+      <div class="contact-links">
+        <a href="mailto:bwnankee@gmail.com" class="contact-link">
+          <span class="contact-link-icon">✉️</span>
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-val">bwnankee@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/bryant-nankee/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-icon">💼</span>
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-val">linkedin.com/in/bryant-nankee</span>
+        </a>
+        <a href="tel:6086041119" class="contact-link">
+          <span class="contact-link-icon">📱</span>
+          <span class="contact-link-label">Phone</span>
+          <span class="contact-link-val">608.604.1119</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Bryant Nankee &mdash; bryantnankee.com
+  </footer>
+
+  <script>
+    // ── Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Trajectory bars (animate when section scrolls into view)
+    const trajSection = document.querySelector('#results');
+    let barsAnimated = false;
+    const trajObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !barsAnimated) {
+          barsAnimated = true;
+          setTimeout(() => {
+            document.getElementById('tbar-base').style.width = '41%';
+            document.getElementById('tbar-yr1').style.width  = '76%';
+            document.getElementById('tbar-yr2').style.width  = '100%';
+          }, 400);
+          // Count up lead number
+          const el = document.getElementById('lead-count');
+          let start = 81, end = 199, dur = 1600;
+          let startTime = null;
+          function step(ts) {
+            if (!startTime) startTime = ts;
+            let p = Math.min((ts - startTime) / dur, 1);
+            el.textContent = Math.round(start + (end - start) * p);
+            if (p < 1) requestAnimationFrame(step);
+          }
+          setTimeout(() => requestAnimationFrame(step), 400);
+        }
+      });
+    }, { threshold: 0.2 });
+    if (trajSection) trajObserver.observe(trajSection);
+  </script>
+</body>
+</html>

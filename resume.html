@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bryant Nankee — Resume</title>
+  <meta name="description" content="Resume — Bryant Nankee, Growth Marketing Leader specializing in demand generation, paid media, HubSpot operations, and AI automation systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:        #0f172a;
+      --ink-light:  #334155;
+      --ink-muted:  #64748b;
+      --accent:     #2563eb;
+      --accent-lt:  #eff6ff;
+      --teal:       #0d9488;
+      --teal-lt:    #f0fdfa;
+      --border:     #e2e8f0;
+      --bg:         #f8fafc;
+      --white:      #ffffff;
+    }
+
+    html { background: var(--bg); }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ─── TOP BAR ─── */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(248,250,252,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 10px; }
+    .topbar-back {
+      font-size: 13px; font-weight: 600; color: var(--ink-muted);
+      text-decoration: none; padding: 6px 12px;
+      border: 1px solid var(--border); border-radius: 100px;
+      transition: all 0.18s ease;
+    }
+    .topbar-back:hover { color: var(--ink); border-color: #94a3b8; }
+    .topbar-sep { width: 1px; height: 16px; background: var(--border); }
+    .topbar-label { font-size: 13px; font-weight: 500; color: var(--ink-muted); }
+    .topbar-right { display: flex; gap: 8px; }
+    .btn-download {
+      font-size: 13px; font-weight: 600; color: var(--white);
+      background: var(--accent); padding: 8px 18px; border-radius: 100px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .btn-download:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-copy {
+      font-size: 13px; font-weight: 600; color: var(--ink-light);
+      background: var(--white); padding: 7px 16px; border-radius: 100px;
+      border: 1px solid var(--border); cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .btn-copy:hover { border-color: #94a3b8; }
+    @media (max-width: 600px) {
+      .topbar { padding: 12px 16px; }
+      .topbar-sep, .topbar-label { display: none; }
+    }
+
+    /* ─── PAGE ─── */
+    .page-wrap {
+      max-width: 800px; margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+    @media print {
+      .topbar { display: none; }
+      .page-wrap { margin: 0; padding: 0; max-width: 100%; }
+      body { background: white; }
+    }
+
+    /* ─── RESUME CARD ─── */
+    .resume {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 52px 56px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+    }
+    @media (max-width: 600px) { .resume { padding: 32px 24px; border-radius: 12px; } }
+    @media print { .resume { border: none; box-shadow: none; border-radius: 0; padding: 0; } }
+
+    /* ─── HEADER ─── */
+    .r-header { margin-bottom: 28px; }
+    .r-name {
+      font-size: 34px; font-weight: 800; letter-spacing: -0.025em;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .r-title {
+      font-size: 15px; font-weight: 500; color: var(--ink-muted); margin-bottom: 14px;
+    }
+    .r-contact {
+      display: flex; flex-wrap: wrap; gap: 4px 16px;
+      font-size: 13px; color: var(--ink-muted);
+    }
+    .r-contact a { color: var(--accent); text-decoration: none; }
+    .r-contact a:hover { text-decoration: underline; }
+
+    /* ─── SUMMARY ─── */
+    .r-summary {
+      font-size: 14px; color: var(--ink-light); line-height: 1.75;
+      padding: 18px 20px; background: var(--bg); border-radius: 10px;
+      border-left: 3px solid var(--accent); margin-bottom: 32px;
+    }
+
+    /* ─── SECTION ─── */
+    .r-section { margin-bottom: 32px; }
+    .r-section-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 14px;
+      padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    }
+
+    /* ─── HIGHLIGHTS ─── */
+    .highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 560px) { .highlights { grid-template-columns: 1fr; } }
+    .highlight-item {
+      background: var(--bg); border-radius: 8px; padding: 12px 14px;
+      border: 1px solid var(--border);
+    }
+    .hl-val { font-size: 18px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .hl-val.teal { color: var(--teal); }
+    .hl-label { font-size: 12px; color: var(--ink-muted); font-weight: 500; margin-top: 2px; }
+
+    /* ─── JOB ─── */
+    .r-job { margin-bottom: 28px; }
+    .r-job:last-child { margin-bottom: 0; }
+    .r-job-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; gap: 4px; margin-bottom: 4px;
+    }
+    .r-company { font-size: 16px; font-weight: 700; color: var(--ink); }
+    .r-dates { font-size: 12px; color: var(--ink-muted); font-weight: 500; white-space: nowrap; }
+    .r-role { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .r-context { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-bottom: 10px; }
+    .r-bullets { padding-left: 18px; }
+    .r-bullets li {
+      font-size: 13.5px; color: var(--ink-light); line-height: 1.65;
+      margin-bottom: 7px;
+    }
+    .r-bullets li strong { color: var(--ink); font-weight: 600; }
+    .r-bullets li:last-child { margin-bottom: 0; }
+
+    /* ─── TRANSITION NOTE ─── */
+    .r-transition {
+      font-size: 13px; color: var(--ink-muted); font-style: italic;
+      padding: 10px 14px; background: var(--bg); border-radius: 8px;
+      border-left: 2px solid var(--border); margin: 16px 0 24px;
+    }
+
+    /* ─── SKILLS ─── */
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      font-size: 12px; font-weight: 500; color: var(--ink-light);
+      background: var(--bg); border: 1px solid var(--border);
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .skill-tag.accent { color: var(--accent); background: var(--accent-lt); border-color: #bfdbfe; }
+    .skill-tag.teal { color: var(--teal); background: var(--teal-lt); border-color: #99f6e4; }
+
+    /* ─── EDU ─── */
+    .r-edu {
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; gap: 4px;
+    }
+    .r-edu-degree { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .r-edu-school { font-size: 13px; color: var(--ink-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="index.html" class="topbar-back">← Portfolio</a>
+      <div class="topbar-sep"></div>
+      <span class="topbar-label">Bryant Nankee — Resume</span>
+    </div>
+    <div class="topbar-right">
+      <!-- UPDATE THIS href WHEN YOU HAVE A PDF UPLOADED -->
+      <a href="#" class="btn-download" onclick="window.print(); return false;">Download PDF</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="resume">
+
+      <!-- HEADER -->
+      <div class="r-header">
+        <div class="r-name">Bryant Nankee</div>
+        <div class="r-title">Growth Marketing Leader &mdash; Demand Generation &amp; AI Systems</div>
+        <div class="r-contact">
+          <span>Milwaukee, WI</span>
+          <a href="mailto:bwnankee@gmail.com">bwnankee@gmail.com</a>
+          <span>608.604.1119</span>
+          <a href="https://www.linkedin.com/in/bryant-nankee/" target="_blank">linkedin.com/in/bryant-nankee</a>
+          <a href="https://portfolio.bryantnankee.com">portfolio.bryantnankee.com</a>
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="r-summary">
+        13 years in marketing — B2B SaaS, agency side, one company I co-founded. Currently the growth and operations lead within a lean marketing team at a vertical SaaS company — managing $1M+ in paid media, running HubSpot across marketing and sales, and building AI automation systems that scale what a small team can ship. Delivered $9M+ in inbound closed won revenue in 2025 (nearly 80% of all closed deals). Known for building attribution infrastructure, autonomous agent pipelines, and compounding growth systems.
+      </div>
+
+      <!-- HIGHLIGHTS -->
+      <div class="r-section">
+        <div class="r-section-title">Career Highlights</div>
+        <div class="highlights">
+          <div class="highlight-item">
+            <div class="hl-val teal">$9M+</div>
+            <div class="hl-label">Inbound closed won revenue in 2025 — ~80% of all closed deals, 4x+ YoY growth</div>
+          </div>
+          <div class="highlight-item">
+            <div class="hl-val">+146%</div>
+            <div class="hl-label">Inbound lead growth over 21 months — 81 to 199 leads/month</div>
+          </div>
+          <div class="highlight-item">
+            <div class="hl-val">$1.5M</div>
+            <div class="hl-label">Annual paid media managed across Google, Meta, LinkedIn &amp; Bing</div>
+          </div>
+          <div class="highlight-item">
+            <div class="hl-val teal">AI Systems</div>
+            <div class="hl-label">Built specialized autonomous agents — SEO, content strategy, and distribution — each with defined roles and skills, running without manual intervention</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="r-section">
+        <div class="r-section-title">Professional Experience</div>
+
+        <!-- ECP -->
+        <div class="r-job">
+          <div class="r-job-header">
+            <div class="r-company">ECP</div>
+            <div class="r-dates">July 2024 – Present</div>
+          </div>
+          <div class="r-role">Marketing Specialist — Growth &amp; Operations | HubSpot Admin</div>
+          <div class="r-context">Vertical SaaS platform serving 8,000+ senior living communities across all 50 states.</div>
+          <ul class="r-bullets">
+            <li>Grew inbound leads from 81 to 199/month (<strong>+146% over 21 months</strong>), contributing to <strong>$9M+ in inbound closed won revenue in 2025</strong> — nearly 80% of all closed deals, a 4x+ YoY increase from ~$2M (59%) in 2024.</li>
+            <li>Manage and optimize <strong>$1M–$1.5M annual paid media budget</strong> across Google, Meta, LinkedIn, and Bing; built ECP's Meta lead generation funnel from the ground up; implemented dynamic UTM tracking at the ad creative and audience level for exact performance attribution.</li>
+            <li>Architected full attribution infrastructure: UTM convention system, form listener, and hidden field framework — replaced a blind round-robin lead model with <strong>intelligent state/census-based routing</strong> to the correct AE, enabling channel-level closed won reporting for the first time.</li>
+            <li>Serve as <strong>HubSpot admin</strong> across marketing and sales — built lead routing workflows, lifecycle automations, multi-touch attribution models, sales sequences, and reporting dashboards; expanded sequences usage from near-zero to a core sales motion.</li>
+            <li>Created specialized autonomous agents — each with defined roles and skills for SEO, content strategy, and distribution — that work together to scrape industry trends, generate content, route to Notion for review, and queue for HubSpot distribution; integrated with the Meta Ads API for AI-assisted ad optimization.</li>
+            <li>Serving as the <strong>company's Claude Teams systems architect</strong> — building context libraries, process documentation, team skills, and automation plugins; deploying via Vercel and Cloudflare with GitHub-managed repos and full documentation.</li>
+            <li>Producing professional video content via <strong>Remotion</strong> (React-based video engine), elevating content quality without additional production headcount.</li>
+            <li>Leading the full website rebuild of <strong>ecp123.com</strong> — owning strategy, information architecture, and end-to-end execution.</li>
+          </ul>
+        </div>
+
+        <!-- Career Transition -->
+        <div class="r-transition">
+          IAA was acquired by Ritchie Bros. in 2023; senior marketing positions were eliminated. Used this period to sharpen AI, attribution, and digital skills before the ECP role.
+        </div>
+
+        <!-- IAA -->
+        <div class="r-job">
+          <div class="r-job-header">
+            <div class="r-company">IAA, Inc.</div>
+            <div class="r-dates">January 2019 – September 2023</div>
+          </div>
+          <div class="r-role">Senior Marketing Manager</div>
+          <ul class="r-bullets">
+            <li>Led all B2B marketing: sales enablement, digital campaigns, content strategy, and paid media ($100K+ across Google and LinkedIn).</li>
+            <li>Increased audience engagement <strong>30%</strong> through improved content cadence and channel strategy across web and social.</li>
+            <li>Directed full redesign and CMS migration of IAAI.com — managing <strong>700+ content pages</strong> and cross-functional teams.</li>
+            <li>Built <strong>40+ custom Looker Studio dashboards</strong> for real-time performance reporting across the organization.</li>
+            <li>Championed adoption of Tiled for sales proposals, saving <strong>200+ annual hours</strong> in proposal creation time.</li>
+            <li>Promoted from Marketing Manager to Senior Marketing Manager in under two years.</li>
+          </ul>
+        </div>
+
+        <!-- Milwaukee Marketing House -->
+        <div class="r-job">
+          <div class="r-job-header">
+            <div class="r-company">Milwaukee Marketing House, LLC</div>
+            <div class="r-dates">June 2017 – January 2019</div>
+          </div>
+          <div class="r-role">Co-Founder</div>
+          <ul class="r-bullets">
+            <li>Founded boutique marketing agency; drove <strong>$250K in first-year revenue</strong> through inbound strategy and referral business.</li>
+            <li>Managed project execution, client relationships, and a network of freelance creatives across industries.</li>
+          </ul>
+        </div>
+
+        <!-- Misix -->
+        <div class="r-job">
+          <div class="r-job-header">
+            <div class="r-company">Misix, Inc.</div>
+            <div class="r-dates">September 2013 – June 2017</div>
+          </div>
+          <div class="r-role">Account Executive</div>
+          <ul class="r-bullets">
+            <li>Managed strategic marketing campaigns and CRM communications for multi-million dollar accounts; built and maintained client websites on WordPress and Kentico; executed email campaigns via HubSpot and Mailchimp.</li>
+            <li>Grew from entry-level coordinator to account executive through demonstrated performance.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- SKILLS -->
+      <div class="r-section">
+        <div class="r-section-title">Core Competencies &amp; Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag accent">Demand Generation</span>
+          <span class="skill-tag accent">Paid Media ($1M+)</span>
+          <span class="skill-tag accent">HubSpot Administration</span>
+          <span class="skill-tag accent">Marketing Operations</span>
+          <span class="skill-tag accent">Attribution Modeling</span>
+          <span class="skill-tag accent">Revenue Marketing</span>
+          <span class="skill-tag teal">Claude Code</span>
+          <span class="skill-tag teal">OpenAI Codex</span>
+          <span class="skill-tag teal">AI Agent Systems</span>
+          <span class="skill-tag teal">Remotion</span>
+          <span class="skill-tag teal">MCP Integrations</span>
+          <span class="skill-tag teal">Vercel / Cloudflare</span>
+          <span class="skill-tag teal">GitHub</span>
+          <span class="skill-tag">Google Ads</span>
+          <span class="skill-tag">Meta Ads</span>
+          <span class="skill-tag">Bing Ads</span>
+          <span class="skill-tag">SEO / GEO</span>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">GTM Execution</span>
+          <span class="skill-tag">CRM Architecture</span>
+          <span class="skill-tag">Salesforce</span>
+          <span class="skill-tag">Looker Studio</span>
+          <span class="skill-tag">Adobe Creative Suite</span>
+          <span class="skill-tag">Google Suite</span>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="r-section" style="margin-bottom:0;">
+        <div class="r-section-title">Education</div>
+        <div class="r-edu">
+          <div>
+            <div class="r-edu-degree">Bachelor of Business Administration — Marketing &amp; International Business</div>
+            <div class="r-edu-school">University of Wisconsin – Oshkosh</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
