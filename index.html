@@ -521,11 +521,11 @@
         <div class="hero-stat-label">Inbound Lead Growth</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-val teal">$9M+</div>
-        <div class="hero-stat-label">Inbound Closed Won (2025)</div>
+        <div class="hero-stat-val teal">4x+</div>
+        <div class="hero-stat-label">Closed Won Growth (YoY)</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-val">$1.5M</div>
+        <div class="hero-stat-val">$1M+</div>
         <div class="hero-stat-label">Paid Media Managed</div>
       </div>
     </div>
@@ -549,21 +549,21 @@
       <!-- Feature: Lead Trajectory -->
       <div class="result-card feature reveal reveal-d1">
         <div>
-          <div class="result-num" id="lead-count">81</div>
-          <div class="result-label">Inbound Leads / Month</div>
+          <div class="result-num" id="lead-count">+146%</div>
+          <div class="result-label">Inbound Lead Growth</div>
           <div class="result-sub">Sustained trajectory over 21 months — from baseline to current average.</div>
           <div class="traj-bars" id="traj-bars">
             <div class="traj-row">
               <div class="traj-row-label">Pre</div>
-              <div class="traj-track"><div class="traj-fill base" id="tbar-base">81</div></div>
+              <div class="traj-track"><div class="traj-fill base" id="tbar-base"></div></div>
             </div>
             <div class="traj-row">
               <div class="traj-row-label">Year 1</div>
-              <div class="traj-track"><div class="traj-fill yr1" id="tbar-yr1">151</div></div>
+              <div class="traj-track"><div class="traj-fill yr1" id="tbar-yr1"></div></div>
             </div>
             <div class="traj-row">
               <div class="traj-row-label">Year 2</div>
-              <div class="traj-track"><div class="traj-fill yr2" id="tbar-yr2">199</div></div>
+              <div class="traj-track"><div class="traj-fill yr2" id="tbar-yr2"></div></div>
             </div>
           </div>
         </div>
@@ -577,18 +577,18 @@
 
       <!-- Closed Won -->
       <div class="result-card reveal reveal-d2">
-        <div class="result-num teal">$9M+</div>
-        <div class="result-label">Inbound Closed Won (2025)</div>
-        <div class="result-sub">79% of all closed deals sourced through inbound — up from ~59% in 2024.</div>
+        <div class="result-num teal">4x+</div>
+        <div class="result-label">Inbound Closed Won Growth (YoY)</div>
+        <div class="result-sub">Record inbound closed won in 2025 — nearly 80% of all deals, a 4x+ increase from 2024.</div>
         <div class="cw-badges">
-          <span class="cw-badge teal-badge">4x+ YoY Growth</span>
-          <span class="cw-badge teal-badge">79% of Closed Won</span>
+          <span class="cw-badge teal-badge">~80% of Closed Won</span>
+          <span class="cw-badge teal-badge">Record 2025</span>
         </div>
       </div>
 
       <!-- Paid Media -->
       <div class="result-card reveal reveal-d3">
-        <div class="result-num">$1.5M</div>
+        <div class="result-num">$1M+</div>
         <div class="result-label">Annual Paid Media</div>
         <div class="result-sub">Google, Meta, LinkedIn &amp; Bing — allocated by ROI and pipeline contribution.</div>
         <div class="cw-badges">
@@ -988,17 +988,6 @@
             document.getElementById('tbar-yr1').style.width  = '76%';
             document.getElementById('tbar-yr2').style.width  = '100%';
           }, 400);
-          // Count up lead number
-          const el = document.getElementById('lead-count');
-          let start = 81, end = 199, dur = 1600;
-          let startTime = null;
-          function step(ts) {
-            if (!startTime) startTime = ts;
-            let p = Math.min((ts - startTime) / dur, 1);
-            el.textContent = Math.round(start + (end - start) * p);
-            if (p < 1) requestAnimationFrame(step);
-          }
-          setTimeout(() => requestAnimationFrame(step), 400);
         }
       });
     }, { threshold: 0.2 });
